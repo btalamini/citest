@@ -1,4 +1,5 @@
 import unittest
+import sys
 
 from citest import functionality
 
@@ -17,7 +18,11 @@ class TestFunctionality(unittest.TestCase):
     def test_dict_union(self):
         a = {'color': 'red', 'number': 2}
         b = {'flavor': 'cherry'}
-        c = a | b
+        v = sys.version_info 
+        if v.major >= 3 and v.minor >= 9:
+            c = a | b
+        else:
+            c = {**a, **b}
         print(c)
 
 if __name__ == "__main__":
