@@ -14,5 +14,11 @@ class TestFunctionality(unittest.TestCase):
         y = functionality.power4(x)
         self.assertEqual(y, 16)
 
+    def test_dict_union(self):
+        a = {'color': 'red', 'number': 2}
+        b = {'flavor': 'cherry'}
+        c = a | b
+        print(c)
+
 if __name__ == "__main__":
     unittest.main()
